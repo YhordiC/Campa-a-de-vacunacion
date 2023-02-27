@@ -23,6 +23,28 @@ header{
     background-color: #ffffffe6;
     z-index: 5;
     width: 100%;
+    justify-content: space-between;
+}
+header .lista{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    background-color: rgb(207, 253, 253);
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+
+header .lista ul{
+    line-height: 4;
+    flex-direction: column;
+}
+header span {
+    position: absolute;
+    right: 10px;
 }
 
 h2{
@@ -43,6 +65,10 @@ header div a{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.8rem;
     color: var(--color1);
+}
+
+header span{
+    display: none;
 }
 .container-nav ul{
     display: flex;
@@ -76,17 +102,16 @@ header div a{
     color: white;
 }
 .container-nav ul li:hover{
-    color: #a71db9;
+    color: hsl(293, 100%, 82%);
     cursor: pointer;
-    -webkit-text-fill-color: #a71db9;  /*Pone margen*/
-    -webkit-text-stroke: 1px #a71db9;
+    -webkit-text-fill-color: #645266;  /*Pone margen*/
+    -webkit-text-stroke: 1px #b083b6;
 }
 
 .container-nav div button:hover{
-    color: rgb(116, 176, 253);
     cursor: pointer;
-  
 }
+
 
 /*estilo 1*/
 
@@ -171,7 +196,8 @@ section{
     display: flex;
     position: absolute;
     bottom: 22px;
-    left: 193px;
+    left: auto;
+    right: auto;
     border-radius: 10px;
     background: white;
     padding: 13px;
@@ -243,6 +269,7 @@ section{
 }
 .container-logo-empresas picture img{
     opacity: 0.39;
+    width: 100%;
 }
 .why-should{
     display: flex;
@@ -311,7 +338,6 @@ section{
 /*page3-----------------------*/
 
 .container-img-doctor {
-    width: 100%;
     background: linear-gradient(360deg,#3f51b5 50%, #ffffff 50%);
     display: flex;
     flex-direction: column;
@@ -493,10 +519,20 @@ footer .poli p{
         height: auto;
         align-items: center;
     }
-
+    .container-nav{
+        display: none;
+    }
+    header span:nth-last-child(2){
+        display: block;
+    }
+  
     .container-inf{
         position: relative;
         top: 75px;
+    }
+    
+    .container-inf, .container-img, .container-img-doctor {
+        width: 70vw;
     }
     .container-inf .inf{
         padding: 5px;
@@ -510,15 +546,15 @@ footer .poli p{
     .page2{
         margin-top: 70px;
     }
+   
 }
 
 @media screen and (max-width: 540px){
     .container-logo{
         margin: 0;
     }
-    .container-nav{
-        display: none;
-    }
+    
+    
     .container-inf > span{
         margin: 0;
     }
@@ -540,6 +576,7 @@ footer .poli p{
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 10px;
+        margin-bottom: 74px;
     }
     .container-logo-empresas picture{
         padding: 0;
@@ -570,6 +607,7 @@ footer .poli p{
     }
     footer .derechos{
         margin: 0;
+        align-items: flex-start;
     }
 
     footer .derechos .inf{
